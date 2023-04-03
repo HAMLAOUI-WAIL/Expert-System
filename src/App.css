@@ -8,26 +8,5 @@
     text-decoration:none;
     text-transform:capitalize;
     transition:.2s linear;
-    background-color: #2C1F4A;
-}
-
-.container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem;
-    /* position: relative; */
-}
-
-.container .left-side{
-    width: 40vw;
-}
-
-.container .right-side{
-    /* justify-content: flex-start; */
-    align-items: center;
-    /* position: absolute; */
-    /* right: 0; */
-    width: 50vw;
-
+    /* background-color: #bdabe8; */
 }

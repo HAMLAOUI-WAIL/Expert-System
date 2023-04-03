@@ -1,0 +1,34 @@
+.sign-right{
+    width: 60%;
+    background: #F1EEE3;
+}
+
+.sign-right input{
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+}
+
+.sign-right label{
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.sign-right .btn-SignIn{
+    background: #E46267;
+    border-radius: 10px;
+}
+
+.sign-left{
+    background: url(../images/login-bg.png);
+}
+
+.sign-left .book-info{
+
+}
