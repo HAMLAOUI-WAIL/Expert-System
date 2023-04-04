@@ -5,21 +5,30 @@ import Navbar from "./scenes/navbar/Navbar1";
 import Choix from "./componant/Choix";
 import SignIn from "./scenes/signIn/SignIn";
 import GetStarted from "./scenes/GetStarted/GetStarted";
+import BookSearch from "./scenes/bookSearch/BookSearch";
 
 function App() {
   return (
-    <BrowserRouter>
-
-      <Navbar />
-      <>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/choix" element={<Choix/>} />
-          <Route exact path="/SignIn" element={<SignIn/>}/>
-          <Route exact path="/GetStarted" element={<GetStarted/>}/>
-        </Routes>
-      </>
+<div className="appp">
+<BrowserRouter>
+      <div>
+        <Navbar />
+      </div>
+      <div className="app">
+        
+        <div>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/choix" element={<Choix/>} />
+            <Route exact path="/SignIn" element={<SignIn/>}/>
+            <Route exact path="/GetStarted" element={<GetStarted/>}/>
+            <Route exact path="/Search" element={<BookSearch/>}></Route>
+          </Routes>
+        </div>
+      </div>
     </BrowserRouter>
+</div>
+  
   );
 }
 

@@ -12,19 +12,10 @@ const netLink = [
     url:'/about'
 }
 ,
-    {display:'Course',
-    url:'/Course'
-}
-
-,
 {
     display:'Contact',
     url:'/contact'
-},
-{
-    display:'Blog',
-    url:'/Blog'
-},
+}
 ]
 
 export default function Navbar() {

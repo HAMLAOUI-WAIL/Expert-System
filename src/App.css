@@ -8,6 +8,15 @@
     text-decoration:none;
     text-transform:capitalize;
     transition:.2s linear;
-    /* background-color: #bdabe8; */
     /* background-color: #F1EEE3; */
+}
+
+.app{
+    display: flex;
+}
+
+.appp{
+    display: flex;
+    background-color: #d0ced6;
+    overflow: hidden;
 }

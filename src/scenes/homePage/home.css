@@ -3,14 +3,16 @@
     justify-content: space-between;
     align-items: center;
     margin: 2rem;
-    background-color: #bdabe8;
 }
+
 
 .container .left-side{
-    width: 40vw;
+    width: 60%;
+    overflow: hidden;
 }
-
-.container .right-side{
-    align-items: center;
-    width: 50vw;
-}
+  
+  .container .right-side {
+    width: 40%;
+    overflow: hidden;
+    height: 100%;
+  }
