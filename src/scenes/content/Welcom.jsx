@@ -23,7 +23,7 @@ export default function Welcom() {
                 </div>
             </div>
             <button className='Get-started'>
-              <NavLink to={"/"} >Get Started</NavLink>
+              <NavLink to={"/SignIn"} >Get Started</NavLink>
             </button>
         </div>
     </div>

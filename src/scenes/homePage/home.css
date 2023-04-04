@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 2rem;
-    /* position: relative; */
+    background-color: #bdabe8;
 }
 
 .container .left-side{
@@ -11,9 +11,6 @@
 }
 
 .container .right-side{
-    /* justify-content: flex-start; */
     align-items: center;
-    /* position: absolute; */
-    /* right: 0; */
     width: 50vw;
 }
