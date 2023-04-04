@@ -20,7 +20,7 @@
   }
   
   .navbar img.active {
-    filter: invert(29%) sepia(96%) saturate(7345%) hue-rotate(335deg) brightness(99%) contrast(123%) drop-shadow(4px 4px 10px rgba(255, 0, 0, 0.992));
+    filter: invert(29%) sepia(96%) saturate(7345%) hue-rotate(335deg) brightness(99%) contrast(123%) drop-shadow(4px 4px 10px rgba(255, 0, 0));
   }
 
 
