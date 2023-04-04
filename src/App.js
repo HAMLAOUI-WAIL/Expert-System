@@ -6,6 +6,7 @@ import Choix from "./componant/Choix";
 import SignIn from "./scenes/signIn/SignIn";
 import GetStarted from "./scenes/GetStarted/GetStarted";
 import BookSearch from "./scenes/bookSearch/BookSearch";
+import Journey from "./scenes/journey/Journey_";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/SignIn" element={<SignIn/>}/>
             <Route exact path="/GetStarted" element={<GetStarted/>}/>
             <Route exact path="/Search" element={<BookSearch/>}></Route>
+            <Route exact path="/Journey" element={<Journey/>}></Route>
           </Routes>
         </div>
       </div>

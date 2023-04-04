@@ -4,7 +4,7 @@
 
 .Search .bookSearchLeft{
     background: #F1EEE3;
-    /* width: 60vw; */
+    width: 62.4vw;
     height: 100%;
     padding: 2rem;
 }
@@ -19,41 +19,6 @@
 
 }
 
-
-.search-bar{
-    margin: 2rem;
-    width: 30rem;
-    border: 1.6px solid rgba(0, 0, 0, 0.15);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 40px;
-    border: none;
-    padding: 5px 10px;
-    font-family: 'Inder';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    color: rgba(136, 132, 132, 0.6);
-    background: #F1EEE3;  
-}
-  
-  .search-bar input[type="text"] {
-    width: 100%;
-    border: none;
-    padding: 5px 10px;
-    font-family: 'Inder';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 25px;
-    background: #F1EEE3;
-  }
-
-  .search-bar img{
-    background-size: cover;
-  }
 
 .Search .contantSearch {
     display: grid;
@@ -105,51 +70,6 @@
     letter-spacing: 0.05em;
     color: #E46267;    
 }
-
-
-.bookSearchRight .profile-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
- .bookSearchRight  .profile-container img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
- .bookSearchRight  .profile-container h3 {
-    margin: 1rem;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  
- .bookSearchRight  .notification-icon-container {
-    position: relative;
-  }
-  
- .bookSearchRight  .notification-icon-container img {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .bookSearchRight .notification-icon-container::after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    border-radius: 50%;
-  }
 
 .SearchFilter h1{
     margin-top: 2rem;

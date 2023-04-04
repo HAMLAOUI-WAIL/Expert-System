@@ -1,15 +1,9 @@
 import React,{ useState }   from 'react'
-import searchIcon from '../images/icons8-search-100 2.png';
-import profileImg from '../images/img.png';
-import notificationIcon from '../images/icons8-bell-100 1.png';
 import "./BookSearch.css"
+import Search from '../../componant/Search';
+import PersonalInfo from '../../componant/PersonalInfo';
 
 export default function BookSearch() {
-  const [searchText, setSearchText] = useState("");
-
-  const handleSearch = (event) => {
-    setSearchText(event.target.value);
-  };
 
 
   const [checkboxes, setCheckboxes] = useState({
@@ -31,14 +25,8 @@ export default function BookSearch() {
     <div className='Search'>
         <div className='bookSearchLeft'>
 
-          <div className="search-bar">
-            <img src={searchIcon} alt="Search Icon" />
-            <input
-                type="text"
-                placeholder="Search Book Summary ...."
-                value={searchText}
-                onChange={handleSearch}
-              />
+          <div>
+            <Search/>
           </div>
 
           <p>
@@ -92,12 +80,8 @@ export default function BookSearch() {
 
         <div className='bookSearchRight'>
 
-          <div className="profile-container">
-            <img src={profileImg} alt="Profile" />
-            <h3>Wail Hamlaoui</h3>
-            <div className="notification-icon-container">
-              <img src={notificationIcon} alt="Notification" />
-            </div>
+          <div>
+            <PersonalInfo/>
           </div>
 
           <div className="SearchFilter">
