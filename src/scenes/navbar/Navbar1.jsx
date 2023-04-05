@@ -15,6 +15,7 @@ export default function Navbar1() {
 
   return (
     <div className="navbar">
+      <p>AW</p>
       <Link to="/" onClick={() => handleIconClick('home')}>
         <img src={homeIcon} alt="Home" className={activeIcon === 'home' ? 'active' : ''} />
       </Link>

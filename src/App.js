@@ -7,6 +7,7 @@ import SignIn from "./scenes/signIn/SignIn";
 import GetStarted from "./scenes/GetStarted/GetStarted";
 import BookSearch from "./scenes/bookSearch/BookSearch";
 import Journey from "./scenes/journey/Journey_";
+import BookDetails from "./scenes/BookDetails/BookDetails";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/GetStarted" element={<GetStarted/>}/>
             <Route exact path="/Search" element={<BookSearch/>}></Route>
             <Route exact path="/Journey" element={<Journey/>}></Route>
+            <Route exact path="/details" element={<BookDetails/>}></Route>
           </Routes>
         </div>
       </div>

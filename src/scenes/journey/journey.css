@@ -37,31 +37,9 @@
     padding-right: 2rem;
 }
 
-.btn-cont{
-    background: #272A34;
-    border-radius: 20px;
-    width: 214px;
-    height: 47px; 
-    display: flex;  
-    align-items: center;
-    justify-content: center; 
-    cursor: pointer;
-}
 
-.btn-cont:hover{
-    background: #38393c;
-}
+/*  */
 
-.btn-cont a{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;    
-}
 
  .contantSearch {
     margin-top: 2rem;
@@ -87,8 +65,14 @@
     line-height: 32px;
     letter-spacing: 0.05em;
     color: #000000;   
-    margin-bottom: 2rem; 
+    /* margin-bottom: .7rem;  */
     width: 200px;
+}
+
+.contantSearch{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
 }
 
 .contantSearch .BookSResultat{
