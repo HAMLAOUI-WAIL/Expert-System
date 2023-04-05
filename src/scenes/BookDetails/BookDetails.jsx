@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import PersonalInfo from '../../componant/PersonalInfo'
 import Search from '../../componant/Search'
 import Button from '../../componant/Button'
@@ -36,7 +37,9 @@ export default function BookDetails(props) {
       </div>
       <div className="Details">
         <div className="btn-">
-            <Button props={"Read The Summary"}/>
+            <Link to={"/BookSummary"}>
+             <Button props={"Read The Summary"}/>
+            </Link>
             <div className='lgg'>
                 <img src={save} alt="" />
                 <img src={connect} alt="" />

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import "./journey.css"
 import Search from '../../componant/Search'
@@ -32,6 +31,9 @@ export default function Journey_() {
 
   const handleClick = () => {
     navigate( '/details',{state:{content:BookList}});
+  };  
+  const handleChange = () => {
+    
   };
 
   const navigate = useNavigate()
@@ -52,7 +54,8 @@ export default function Journey_() {
            a 13 year old marleyan warrior
             trained really hard , however Zeke managed to catch his head and activate it. </p>
       </div>
-      <Button props={"Read The Summary"}/>
+     
+      <Button props={"continue reading"}/>
 
       <div className="contantSearch">
         {
