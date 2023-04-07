@@ -29,15 +29,14 @@ const BookList = [
 
 export default function Journey_() {
 
+  const navigate = useNavigate()
+
   const handleClick = () => {
     navigate( '/details',{state:{content:BookList}});
   };  
   const handleChange = () => {
     
   };
-
-  const navigate = useNavigate()
-
 
   return (
     <div className='JorneyContant'>

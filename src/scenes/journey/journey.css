@@ -41,14 +41,6 @@
 /*  */
 
 
- .contantSearch {
-    margin-top: 2rem;
-    display: flex;
-    /* grid-template-columns: repeat(3, 1fr); */
-    grid-gap: 3rem;
-    margin-bottom: 1.5rem;
-}  
-
  .BookSResultat .imageC{
     width: 186px;
     height: 233px;
@@ -73,6 +65,7 @@
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
+    margin-top: 2rem;
 }
 
 .contantSearch .BookSResultat{

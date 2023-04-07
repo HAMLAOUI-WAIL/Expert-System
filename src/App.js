@@ -9,6 +9,7 @@ import BookSearch from "./scenes/bookSearch/BookSearch";
 import Journey from "./scenes/journey/Journey_";
 import BookDetails from "./scenes/BookDetails/BookDetails";
 import BookSummary from "./scenes/BookSummary/BookSummary";
+import MainPage from "./scenes/Main_Page/Main_Page";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/Journey" element={<Journey/>}></Route>
             <Route exact path="/details" element={<BookDetails/>}></Route>
             <Route exact path="/BookSummary" element={<BookSummary/>}></Route>
+            <Route exact path="/Main" element={<MainPage/>}></Route>
           </Routes>
         </div>
       </div>
