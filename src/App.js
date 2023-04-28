@@ -11,6 +11,8 @@ import BookDetails from "./scenes/BookDetails/BookDetails";
 import BookSummary from "./scenes/BookSummary/BookSummary";
 import MainPage from "./scenes/Main_Page/Main_Page";
 import Tictactoe from "./scenes/Game/TickTacTao"
+import Form from "./scenes/Form/Form";
+import FormAfter from "./scenes/Form/Form_after";
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
             <Route exact path="/BookSummary" element={<BookSummary/>}></Route>
             <Route exact path="/Main" element={<MainPage/>}></Route>
             <Route exact path="/Tictactoe" element={<Tictactoe/>}></Route>
+            <Route exact path="/Form" element={<Form/>}></Route>
+            <Route exact path="/Form_after" element={<FormAfter/>}></Route>
           </Routes>
         </div>
       </div>
