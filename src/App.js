@@ -13,7 +13,7 @@ import MainPage from "./scenes/Main_Page/Main_Page";
 import Tictactoe from "./scenes/Game/TickTacTao"
 import Form from "./scenes/Form/Form";
 import FormAfter from "./scenes/Form/Form_after";
-
+import Form2 from "./scenes/MainMenu/Form";
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/choix" element={<Choix/>} />
             <Route exact path="/SignIn" element={<SignIn/>}/>
-            <Route exact path="/GetStarted" element={<GetStarted/>}/>
+            <Route exact path="/GetStarted" element={<Form2/>}/>
             <Route exact path="/Search" element={<BookSearch/>}></Route>
             <Route exact path="/Journey" element={<Journey/>}></Route>
             <Route exact path="/details" element={<BookDetails/>}></Route>
