@@ -14,6 +14,7 @@ import Tictactoe from "./scenes/Game/TickTacTao"
 import Form from "./scenes/Form/Form";
 import FormAfter from "./scenes/Form/Form_after";
 import Form2 from "./scenes/MainMenu/Form";
+import TickTacTao from "./scenes/Game/TickTacTao";
 
 function App() {
   return (
@@ -26,10 +27,10 @@ function App() {
         
         <div>
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<Form2 />} />
             <Route exact path="/choix" element={<Choix/>} />
             <Route exact path="/SignIn" element={<SignIn/>}/>
-            <Route exact path="/GetStarted" element={<Form2/>}/>
+            <Route exact path="/GetStarted" element={<Home/>}/>
             <Route exact path="/Search" element={<BookSearch/>}></Route>
             <Route exact path="/Journey" element={<Journey/>}></Route>
             <Route exact path="/details" element={<BookDetails/>}></Route>
@@ -38,6 +39,8 @@ function App() {
             <Route exact path="/Tictactoe" element={<Tictactoe/>}></Route>
             <Route exact path="/Form" element={<Form/>}></Route>
             <Route exact path="/Form_after" element={<FormAfter/>}></Route>
+            <Route exact path="/Game" element={<TickTacTao/>}></Route>
+
           </Routes>
         </div>
       </div>

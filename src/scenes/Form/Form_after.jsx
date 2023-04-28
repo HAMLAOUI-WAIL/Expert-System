@@ -7,18 +7,19 @@ export default function Form_after() {
     return (
         <div className='formI'>
             
-            <div className='form'>
+            <div className='form' style={{width:"60rem"}}>
                 <h1>
                 Let’s Start Customizing Your Journey 
                 </h1>
                 <p>Help Us customize your journey by answering few consize questions</p>
 
-                <div className='CoNTA'>
-                <div className="left">
+                <div className='flex mt-10 mb-10' style={{justifyContent:"space-between"}}>
+                <div className="left mb-8 mr-12">
                     <h1 className="Qst2">
-                    What is your age group ?
+                     What is your age group ?
                     </h1>
-                    <div className="form-element">
+                    
+                    <div className="form-element mt-4">
                         <input type="checkbox" name="platForm" value="1" id="1"/>
                         <label htmlFor="1">
                             <div className="title">
@@ -26,7 +27,7 @@ export default function Form_after() {
                             </div>
                         </label>
                     </div>
-                    <div className="form-element">
+                    <div className="form-element mt-4">
                         <input type="checkbox" name="platForm" value="2" id="2"/>
                         <label htmlFor="2">
                         <div className="title">
@@ -34,7 +35,7 @@ export default function Form_after() {
                         </div>
                         </label>
                     </div>
-                    <div className="form-element">
+                    <div className="form-element mt-4">
                         <input type="checkbox" name="platForm" value="3" id="3"/>
                         <label htmlFor="3">
                         <div className="title">
@@ -44,45 +45,48 @@ export default function Form_after() {
                     </div>
                 </div>
 
-                <div className="right">
-                    <div className="Goals">
+                <div className="right ml-22">
+                    <div className="">
                         <h1 className="Qst2">What is your gender ?</h1>
-                        <div className="container">
-                        <div className="list">
-                            <div className="form-element">
-                            <input type="checkbox" name="platForm" value="homme" id="homme"/>
-                            <label htmlFor="homme">
-                            <div className="icon">
-                                    <img src={imageH} alt="" />
+                        <div className="">
+                            <div className="flex">
+                                <div className="mr-10">
+                                    <input type="checkbox" name="platForm" value="Male" id="Male"/>
+                                    <label htmlFor="Male">
+                                    <div className="">
+                                            <img src={imageH} alt="" />
+                                        </div>
+                                        <div className="">
+                                          Male
+                                        </div>
+                                    </label>
                                 </div>
-                                <div className="title">
-                                Male
+                                <div className="">
+                                <input type="checkbox" name="platForm" value="famme" id="famme"/>
+                                <label htmlFor="famme">
+                                    <div className="">
+                                        <img src={imageF} alt="" />
+                                    </div>
+                                    <div className="">
+                                        Female
+                                    </div>
+                                </label>
                                 </div>
-                            </label>
                             </div>
-                            <div className="form-element">
-                            <input type="checkbox" name="platForm" value="famme" id="famme"/>
-                            <label htmlFor="famme">
-                            <div className="icon">
-                                    <img src={imageF} alt="" />
-                                </div>
-                                <div className="title">
-                                    Female
-                                </div>
-                            </label>
-                            </div>
-        
-        
-                        </div>
                     </div>
                     </div>
                 </div>
+
+                <div>
+                    ,
+                </div>
+
                 </div>
     
                 
     
                 <button className='btn-next'>
-                    <a href='/'>Next</a>
+                    <a href='/Form'>Next</a>
                 </button>
             </div>
         </div>
