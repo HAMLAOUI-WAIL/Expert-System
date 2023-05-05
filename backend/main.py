@@ -38,10 +38,10 @@ healthy(x) & stronger relatios(x) == > exercise and health
 
 2nd part :
 -----------------------
-
 Enterpren ==> Book(jamayka1)
 Enterpren ==> Book(jamayka3)
 finance ==> Book(rich dad poor dad)
+
 
  
 
@@ -55,8 +55,23 @@ from aima3.logic import *
 data = [
         "makemoney(x) & leadership(x) == > THEMES(Enterpren)",
         "makemoney(x) & productivity(x) == > THEMES(finance)",
+        
+        "THEMES(Enterpren) ==> Book(jamayka1)",
+        "THEMES(Enterpren) ==> Book(jamayka3)",
+        "THEMES(finance) ==> Book(rich dad poor dad)",
+        
         "healthy(x) & stronger relatios(x) == > THEMES(Networking)",
-        "healthy(x) & stronger relatios(x) == > THEMES(exerciseAndHealth)",
+        "healthy(x) & stronger relatios(x) == > THEMES(ExerciseAndHealth)",
+        
+        
+        "THEMES(Enterpren)",
+        "THEMES(Finance)",
+        "THEMES(SelfImprovment)",
+        "THEMES(ExerciseAndHealth)",
+        "THEMES(Cooking)",
+        "THEMES(Poetry)",
+        "THEMES(Psychologie)",
+        "THEMES(Networking)",
         
     ]
 
@@ -68,3 +83,4 @@ def KnowldgeBase():
     return
 
 KnowldgeBase()
+
