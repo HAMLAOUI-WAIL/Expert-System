@@ -5,7 +5,7 @@ import aima.logic as lg
 import aima.utils as ut
 
 
-# Our Knowledge Base would have rules and facts that provide to us themes corresponding to the topic
+
 
 app = Flask(__name__)
 fc = lg.FolKB()
@@ -116,3 +116,24 @@ buisiness(x) ==> economics(x)
 buisiness(x) ==>  
 '''
 
+
+"""
+
+from aima3.logic import *
+
+data = [
+        "makemoney(x) & leadership(x) == > THEMES(Enterpren)",
+        "makemoney(x) & productivity(x) == > THEMES(finance)",
+        "healthy(x) & stronger relatios(x) == > THEMES(Networking)",
+        "healthy(x) & stronger relatios(x) == > THEMES(exerciseAndHealth)",
+        
+    ]
+
+fc = FolKB()
+
+def KnowldgeBase():
+    for i in data:
+        fc.tell(expr(i))
+    return
+
+"""
