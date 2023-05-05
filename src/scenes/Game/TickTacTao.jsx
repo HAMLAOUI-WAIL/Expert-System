@@ -149,7 +149,7 @@ export default function TickTacTao() {
     })
   return (
     <>
-    <body className='TicTacTo'>
+    <body className='TicTacTo flex justify-center '>
         
             <table>
                 <tr>

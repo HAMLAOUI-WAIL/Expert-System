@@ -49,7 +49,7 @@ export default function Main_Page() {
                 </p>
 
                 <div style={{margin:'1rem 0'}}>
-                    <Link to={"/BookSummary"}>
+                    <Link to={"/Form_after"}>
                       <Button props={"Start your Journey"}/>
                     </Link>
                 </div>

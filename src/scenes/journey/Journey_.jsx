@@ -55,6 +55,7 @@ export default function Journey_() {
       </div>
      
       <Button props={"continue reading"}/>
+      <h1 className='mt-6' >Does this book seem interesting to you?</h1>
 
       <div className="contantSearch">
         {
