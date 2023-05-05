@@ -1,47 +1,16 @@
-"""
-So our expert system would initially have rules no facts at all
-when the user choses GOALS we tell our knowledge Base of the new facts we provided through the 
-
-we do a forward chain and get the list of themes back
-after that backend take cares of querying Books based from the database based on the themes the updated KB provided return to the Front end
-Clean up the KB [ remove facts for the next request (scope of the KB is a one func call  short lifecycle ]
-
-OUR GOALS can look something like : 
-- make more money
-- better leadership
-- more productive
-- healthier lifestyle
-- better carreer
-- stronger relations
-- Get Shores Done
-- articulate
-
-OUR THEMES can look something like : 
-- enterpren
-- finance
-- self improvment
-- excercise and health
-- poetry
-- Cooking
-- Networking
-- psychologie
-- 
-
-OUR KB can look something like this : 
-1st part : 
--------------------------
-makemoney(x) & leadership(x) == > Enterpren
-makemoney(x) & productivity(x) == > finance
-healthy(x) & stronger relatios(x) == > Networking
-healthy(x) & stronger relatios(x) == > exercise and health
+from flask import Flask
+from flask import request, jsonify,session
+from flask_cors import CORS,cross_origin
+import aima.logic as lg
+import aima.utils as ut
 
 
 2nd part :
 -----------------------
+
 Enterpren ==> Book(jamayka1)
 Enterpren ==> Book(jamayka3)
 finance ==> Book(rich dad poor dad)
-
 
  
 
@@ -55,23 +24,8 @@ from aima3.logic import *
 data = [
         "makemoney(x) & leadership(x) == > THEMES(Enterpren)",
         "makemoney(x) & productivity(x) == > THEMES(finance)",
-        
-        "THEMES(Enterpren) ==> Book(jamayka1)",
-        "THEMES(Enterpren) ==> Book(jamayka3)",
-        "THEMES(finance) ==> Book(rich dad poor dad)",
-        
         "healthy(x) & stronger relatios(x) == > THEMES(Networking)",
-        "healthy(x) & stronger relatios(x) == > THEMES(ExerciseAndHealth)",
-        
-        
-        "THEMES(Enterpren)",
-        "THEMES(Finance)",
-        "THEMES(SelfImprovment)",
-        "THEMES(ExerciseAndHealth)",
-        "THEMES(Cooking)",
-        "THEMES(Poetry)",
-        "THEMES(Psychologie)",
-        "THEMES(Networking)",
+        "healthy(x) & stronger relatios(x) == > THEMES(exerciseAndHealth)",
         
     ]
 
@@ -83,4 +37,3 @@ def KnowldgeBase():
     return
 
 KnowldgeBase()
-

@@ -81,7 +81,7 @@ export default function Main_Page() {
                 </div>
 
                 <div className='OurHelp'>
-                 <div className="imageC" onClick={handleClick}></div>
+                <div className="imageC" onClick={handleClick}></div>
                   <div>
                     <p>You get a 30 day plan , a book summary to read everyday carefully calibrated to make you closer to your dream.
                     </p>
