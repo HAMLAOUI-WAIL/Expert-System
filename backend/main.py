@@ -75,20 +75,20 @@ rules = [
 
 
 
-    "MakeMoney(x) & Career(x) == >Theme(Buisiness,x)",
-    "MakeMoney(x) & Career(x) == >Theme(Finance,x)",
+    "MakeMoney(x) & Career(x) ==>Theme(Business,x)",
+    "MakeMoney(x) & Career(x) ==>Theme(Finance,x)",
 
 
 
     "Healthy(x) & Productivity(x) ==> Theme(SelfImprovement,x)",
-    "Healthy(x) & Productivity(x) == >Theme(Nutrition,x)",
-    "Healthy(x) & Productivity(x) == >Theme(Wellness,x)",
+    "Healthy(x) & Productivity(x) ==>Theme(Nutrition,x)",
+    "Healthy(x) & Productivity(x) ==>Theme(Wellness,x)",
 
 
 
-    "Social(x) & Healthy(x) == > Theme(CommunicationSkills,x)",
-    "Social(x) & Healthy(x) == > Theme(SelfHelp,x)",
-    "Social(x) & Healthy(x) == > Theme(Relationships,x)",
+    "Social(x) & Healthy(x) ==> Theme(CommunicationSkills,x)",
+    "Social(x) & Healthy(x) ==> Theme(SelfHelp,x)",
+    "Social(x) & Healthy(x) ==> Theme(Relationships,x)",
 
     "Technology(x) & Career(x) ==> Theme(TechnologyTrends,x)",
     "Technology(x) & MakeMoney(x) ==> Theme(Freelance,x)",
@@ -106,7 +106,7 @@ rules = [
 
 
     "Social(x) ==> Theme(Relationships,x)",
-    "Career(x) ==> Theme(Career Development,x)",
+    "Career(x) ==> Theme(Business,x)",
     "MakeMoney(x) ==> Theme(Finance,x)",
     "Productivity(x) ==> Theme(TimeManagement,x)",
     "Leadership(x) ==> Theme(LeadershipDevelopment,x)",
@@ -115,13 +115,60 @@ rules = [
     "Social(x) ==> Theme(CommunicationSkills,x)",
     "Technology(x) ==> Theme(Programming,x)",
 
-    "Theme(Career,x) || Theme(Entrepreneurship,x) || Theme(Management,x) || Theme(Organization,x) ==> Book(The_Effective_Executive,x)",
-    "Theme(Entrepreneurship,x) ==> Book(High_Output_Management ",
+    "Theme(Career,x) & Theme(Entrepreneurship,x) & Theme(Management,x) & Theme(Organization,x) ==> Book(The_Effective_Executive,x)",
+    "Theme(Productivity,x) & Theme(Business,x) & Theme(Management,x) ==> Book(High_Output_Management,x) ",
+    "Theme(Entrepreneurship,x) &  Theme(Business,x) & Theme(Finance,x)   ==> Book(The_Lean_Startup,x) ",
+    "Theme(Entrepreneurship,x) & Theme(Business,x) & Theme(Management,x)  ==> Book(Zero_to_One,x)",
+    "Theme(SelfHelp,x) & Theme(SelfImprovement,x) & Theme(Wellness,x) ==> Book(The_Life_Changing_Magic_of_Tidying_Up,x)",
+    "Theme(Productivity,x) & Theme(TimeManagement,x) & Theme(SelfHelp,x) & Theme(Wellness,x)   ==> Book(Getting_Things_Done,x)",
+    "Theme(Productivity,x) & Theme(TimeManagement,x)  ==> Book(Eat_That_Frog,x)",
+    "Theme(Entrepreneurship,x) & Theme(SelfImprovement,x)  ==> Book(The_One_Thing,x)",
+    "Theme(Business,x) & Theme(Management,x)   ==> Book(The_Innovators_Dilemma,x)",
+    "Theme(Business,x) & Theme(Management,x)   ==> Book(Good_to_Great,x)",
+    "Theme(Finance,x) & Theme(Investing,x)   ==> Book(The_Intelligent_Investor,x)",
+    "Theme(Finance,x) & Theme(LeadershipDevelopment,x)   ==> Book(The_Millionaire_Next_Door,x)",
+    "Theme(SelfHelp,x) & Theme(Wellness,x) & Theme(Psychology,x)  ==> Book(The_7_Habits_of_Highly_Effective_People,x)",
+    "Theme(SelfHelp,x) & Theme(Psychology,x) & Theme(TimeManagement,x) ==> Book(Atomic_Habits,x)",
+    "Theme(Nutrition,x) & Theme(Wellness,x) & Theme(SelfImprovement,x)  ==> Book(How_Not_to_Die,x)",
+    "Theme(Nutrition,x) & Theme(Wellness,x) & Theme(SelfHelp,x)  ==> Book(The_Omnivores_Dilemma,x)",
+
+
 
 ]
 
+temp = [
+    "Theme(,x) & Theme(,x)   ==> Book(The_Power_of_Now,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Four_Agreements,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Crucial_Conversations,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Never_Split_the_Difference,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Alchemist,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Power_of_Positive_Thinking,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_5_Love_Languages,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Men_Are_from_Mars_Women_Are_from_Venus,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Singularity_Is_Near,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Industries_of_the_Future,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Freelancers_Bible,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Gig_Economy,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Little_Book_of_Common_Sense_Investing,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(A_Random_Walk_Down_Wall_Street,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Master_Algorithm,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Superintelligence_Paths_Dangers_Strategies,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Thinking_Fast_and_Slow,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Influence_The Psychology_of_Persuasion,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Cybersecurity_for_Beginners,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Art_of_Deception,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Code_Complete,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Clean_Code,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Leaders_Eat_Last,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_21_Irrefutable_Laws_of_Leadership,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(Sapiens_A_Brief_History_of_Humankind,x)",
+    "Theme(,x) & Theme(,x) &  ==> Book(The_Guns_of_August,x)",
+
+]
+
+
 Themes = [
-    'Management','Entrepreneurship','Organization','TimeManagement','Buisiness',
+    'Management','Entrepreneurship','Organization','TimeManagement','Business',
     'Finance','SelfImprovement','Nutrition','Wellness','CommunicationSkills',
     'SelfHelp','Relationships','TechnologyTrends','Freelance','Investing',
     'ArtificielIntelligence','Psychology','Cybersecurity','Programming',
@@ -129,41 +176,29 @@ Themes = [
 ]
 
 
-PLANING = {
-    "SUNDAY":"RO2",
-    "MONDAY": "RESEAUX",
-    "TUESDAY": "ENTERPRENARIAT",
-    "WEDNESDAY": "ANUM",
-    "THURSDAY": "AI",
-    "SUNDAY2": "Architecture Dist",
-    "MONDAY2": "Methode Formelles",
-    "TUESDAY2": "SECURITY",
-}
-
-
 
 Books = [
     "The Effective Executive" , "High Output Management" 
  "The Lean Startup" , "Zero to One" 
- "The Life-Changing Magic of Tidying Up"  "Getting Things Done" 
+ "The Life Changing Magic of Tidying Up"  "Getting Things Done" 
  "Eat That Frog!" , "The One Thing" 
-"The Innovator's Dilemma" , "Good to Great" 
+"The Innovators Dilemma" , "Good to Great" 
  "The Intelligent Investor", "The Millionaire Next Door" 
 "The 7 Habits of Highly Effective People", "Atomic Habits" 
- "How Not to Die", "The Omnivore's Dilemma" 
+ "How Not to Die", "The Omnivores Dilemma" 
  "The Power of Now" , "The Four Agreements"
 "Crucial Conversations" , "Never Split the Difference" 
  "The Alchemist" , "The Power of Positive Thinking"
- "The 5 Love Languages" , "Men Are from Mars, Women Are from Venus" 
+ "The 5 Love Languages" , "Men Are from Mars Women Are from Venus" 
  "The Singularity Is Near" , "The Industries of the Future" 
- "The Freelancer's Bible" , "The Gig Economy"
+ "The Freelancers Bible" , "The Gig Economy"
 "The Little Book of Common Sense Investing" , "A Random Walk Down Wall Street" 
- "The Master Algorithm" , "Superintelligence: Paths, Dangers, Strategies" 
-"Thinking, Fast and Slow" , "Influence: The Psychology of Persuasion" 
+ "The Master Algorithm" , "Superintelligence Paths Dangers Strategies" 
+"Thinking Fast and Slow" , "Influence The Psychology of Persuasion" 
  "Cybersecurity for Beginners" , "The Art of Deception" 
 "Code Complete" , "Clean Code" 
  "Leaders Eat Last", "The 21 Irrefutable Laws of Leadership" 
- "Sapiens: A Brief History of Humankind" , "The Guns of August"
+ "Sapiens A Brief History of Humankind" , "The Guns of August"
 ]
 
 Books_Data = [
@@ -196,9 +231,9 @@ Books_Data = [
             "url":"https://m.media-amazon.com/images/I/41Rgxr-Yg3L._AC_UL400_.jpg"
         },
        {
-            "title":"The Life-Changing Magic of Tidying Up",
+            "title":"The Life Changing Magic of Tidying Up",
             "Author":"Marie Kondo",
-            "descreption":"The Life-Changing Magic of Tidying Up is a SelfHelp guidebook that offers a unique approach to decluttering and organizing one's home. The book is based on the author's KonMari method, which emphasizes the importance of keeping only the items that bring joy and discarding the rest.",
+            "descreption":"The Life Changing Magic of Tidying Up is a SelfHelp guidebook that offers a unique approach to decluttering and organizing one's home. The book is based on the author's KonMari method, which emphasizes the importance of keeping only the items that bring joy and discarding the rest.",
             "summary":"The book offers a step-by-step guide to decluttering and organizing one's home, based on the author's KonMari method. The method involves a process of sorting items by category and then deciding which items to keep based on whether they bring joy or not. The book emphasizes the importance of treating one's belongings with respect and gratitude, and of creating a home environment that reflects one's values and personality. The author provides practical advice on how to organize clothes, books, papers, and other items, and stresses the importance of maintaining an organized home through daily habits and routines. The book also discusses the psychological benefits of decluttering and organizing one's home, such as reduced stress and increased focus. The main takeaway from the book is that tidying up is not just a chore, but a transformative process that can bring greater happiness and fulfillment into one's life.",
             "url":"https://m.media-amazon.com/images/I/41b6p4DrVFL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"
         }
@@ -232,16 +267,16 @@ Books_Data = [
             "url":"https://m.media-amazon.com/images/I/71BfRFOKDiL._AC_UY218_.jpg"
         },
         {
-            "title":"The Innovator's Dilemma ",
+            "title":"The Innovators Dilemma ",
             "Author":" Clayton M. Christensen",
-            "descreption":"The Innovator's Dilemma is a business book that explores why successful companies often fail to adapt to disruptive technologies and are overtaken by smaller, less established companies. The book provides a framework for understanding how and why this happens, and offers insights into how companies can overcome the innovator's dilemma and maintain their competitive edge.",
-            "summary":"The book offers insights into why successful companies often fail to adapt to disruptive technologies and are overtaken by smaller, less established companies. The author argues that the very factors that made these companies successful in the first place, such as a focus on improving existing products and services and serving their existing customers, can make it difficult for them to respond to disruptive technologies that require a different set of skills and capabilities. The book provides a framework for understanding how and why this happens, and offers insights into how companies can overcome the innovator's dilemma and maintain their competitive edge. The author provides practical tips on how to identify disruptive technologies and respond to them, such as by creating separate divisions or subsidiaries to explore new technologies and markets, and by focusing on customer needs rather than product features. The main takeaway from the book is that companies need to be proactive in identifying and responding to disruptive technologies, and that this requires a willingness to experiment and take risks. The book offers practical insights and strategies that can be applied to any industry, and is ideal for anyone seeking to stay ahead of the curve and maintain their competitive edge in a rapidly changing marketplace.",
+            "descreption":"The Innovators Dilemma is a business book that explores why successful companies often fail to adapt to disruptive technologies and are overtaken by smaller, less established companies. The book provides a framework for understanding how and why this happens, and offers insights into how companies can overcome The Innovators Dilemma and maintain their competitive edge.",
+            "summary":"The book offers insights into why successful companies often fail to adapt to disruptive technologies and are overtaken by smaller, less established companies. The author argues that the very factors that made these companies successful in the first place, such as a focus on improving existing products and services and serving their existing customers, can make it difficult for them to respond to disruptive technologies that require a different set of skills and capabilities. The book provides a framework for understanding how and why this happens, and offers insights into how companies can overcome The Innovators Dilemma and maintain their competitive edge. The author provides practical tips on how to identify disruptive technologies and respond to them, such as by creating separate divisions or subsidiaries to explore new technologies and markets, and by focusing on customer needs rather than product features. The main takeaway from the book is that companies need to be proactive in identifying and responding to disruptive technologies, and that this requires a willingness to experiment and take risks. The book offers practical insights and strategies that can be applied to any industry, and is ideal for anyone seeking to stay ahead of the curve and maintain their competitive edge in a rapidly changing marketplace.",
             "url":"https://m.media-amazon.com/images/I/618BdBwK5ML._AC_UY218_.jpg"
         },
         {
-            "title" : "Sapiens: A Brief History of Humankind",
+            "title" : "Sapiens A Brief History of Humankind",
             "author" : "Yuval Noah Harari",
-            "description":"Sapiens: A Brief History of Humankind is a captivating and thought-provoking account of the History of Homo sapiens, from our emergence as a species in Africa to our present-day dominance of the planet. The book explores how Homo sapiens has been able to thrive and dominate other species, even as we have caused unprecedented destruction to the environment and other living beings. With a unique blend of science, History, and philosophy, Harari challenges many of our assumptions about what it means to be human.",
+            "description":"Sapiens A Brief History of Humankind is a captivating and thought-provoking account of the History of Homo sapiens, from our emergence as a species in Africa to our present-day dominance of the planet. The book explores how Homo sapiens has been able to thrive and dominate other species, even as we have caused unprecedented destruction to the environment and other living beings. With a unique blend of science, History, and philosophy, Harari challenges many of our assumptions about what it means to be human.",
             "Summary":"In Sapiens, Harari takes readers on a journey through the History of humankind, exploring how we evolved from a species of hunter-gatherers to become the dominant force on the planet. He begins by discussing the cognitive revolution, which he argues allowed Homo sapiens to develop language and complex societies. He then explores the agricultural revolution and the rise of empires, examining how these developments shaped human History. Harari also delves into the scientific and technological revolutions that have taken place over the last few centuries, arguing that they have given us unprecedented power over the natural world. Throughout the book, Harari challenges many of our assumptions about human nature, questioning whether we are truly free, whether we are capable of making ethical decisions, and whether we are ultimately any happier than our hunter-gatherer ancestors. Sapiens is a deeply thought-provoking book that forces readers to confront many uncomfortable truths about the History of our species.",
             "url":"https://m.media-amazon.com/images/I/81tPEe0egBL._AC_UY218_.jpg"
 
@@ -299,17 +334,17 @@ Books_Data = [
             "url": "https://m.media-amazon.com/images/I/717QPvB9bVL._AC_UY218_.jpg"
         },
         {
-            "title": "Thinking, Fast and Slow",
+            "title": "Thinking Fast and Slow",
             "author": " Daniel Kahneman",
-            "description": "Thinking, Fast and Slow is a non-fiction book by Nobel Prize-winning economist Daniel Kahneman. It presents a dual-process theory of the brain, which suggests that human thought operates on two levels: System 1, which is fast, automatic, and intuitive, and System 2, which is slow, deliberate, and analytical. Through a series of experiments and examples, Kahneman explains how these two systems work together and influence our decision-making processes.",
-            "Summary": "The book is a tour of the mind and how it works, exploring the two systems that drive the way we think: System 1 is fast, intuitive, and emotional; System 2 is slower, more deliberative, and more logical. The book provides insight into the biases and heuristics that are embedded in our thinking and decision-making processes, leading us to make mistakes and errors of judgment.Kahneman presents a wealth of fascinating research that reveals how we make decisions, including the role of intuition and emotion, the effects of framing and anchoring, and the ways in which our cognitive biases can lead us astray. The book also explores the concept of prospect theory, which shows how people make choices based on the potential value of losses and gains rather than the final outcome.Overall, Thinking, Fast and Slow is a thought-provoking book that challenges readers to think more deeply about their own thinking processes and how they can improve their decision-making skills. It offers practical advice and insights that can be applied to a wide range of fields, from business to politics to everyday life.",
+            "description": "Thinking Fast and Slow is a non-fiction book by Nobel Prize-winning economist Daniel Kahneman. It presents a dual-process theory of the brain, which suggests that human thought operates on two levels: System 1, which is fast, automatic, and intuitive, and System 2, which is slow, deliberate, and analytical. Through a series of experiments and examples, Kahneman explains how these two systems work together and influence our decision-making processes.",
+            "Summary": "The book is a tour of the mind and how it works, exploring the two systems that drive the way we think: System 1 is fast, intuitive, and emotional; System 2 is slower, more deliberative, and more logical. The book provides insight into the biases and heuristics that are embedded in our thinking and decision-making processes, leading us to make mistakes and errors of judgment.Kahneman presents a wealth of fascinating research that reveals how we make decisions, including the role of intuition and emotion, the effects of framing and anchoring, and the ways in which our cognitive biases can lead us astray. The book also explores the concept of prospect theory, which shows how people make choices based on the potential value of losses and gains rather than the final outcome.Overall, Thinking Fast and Slow is a thought-provoking book that challenges readers to think more deeply about their own thinking processes and how they can improve their decision-making skills. It offers practical advice and insights that can be applied to a wide range of fields, from business to politics to everyday life.",
             "url" : "https://m.media-amazon.com/images/I/71CPEr8zrWL._AC_UY218_.jpg"
         },
 
         {
-            "title": "Influence: The Psychology of Persuasion",
+            "title": "Influence The Psychology of Persuasion",
             "author": "Robert Cialdini",
-            "description": "Influence: The Psychology of Persuasion is a book written by Robert Cialdini, a professor of Psychology and marketing. The book explores the Psychology behind why people say yes and provides practical strategies for influencing others.",
+            "description": "Influence The Psychology of Persuasion is a book written by Robert Cialdini, a professor of Psychology and marketing. The book explores the Psychology behind why people say yes and provides practical strategies for influencing others.",
             "Summary": "The book outlines six principles of influence: reciprocity, commitment and consistency, Social proof, authority, liking, and scarcity. Cialdini explains how these principles are used by marketers, salespeople, and others to persuade and influence others. He also provides real-life examples and case studies to illustrate the principles in action. The book is written in an engaging and accessible style, making it a popular read for anyone interested in the Psychology of persuasion. The insights and strategies provided in the book are applicable to a wide range of contexts, from marketing and sales to personal Relationships and Social interactions.",
             "url": "https://m.media-amazon.com/images/I/71JbZ0V06zL._AC_UY218_.jpg",
         },
@@ -322,10 +357,10 @@ Books_Data = [
             "url": "https://m.media-amazon.com/images/I/919toCZqMQS._AC_UY218_.jpg",
         },
         {
-            "title":"Superintelligence: Paths, Dangers, Strategies",
+            "title":"Superintelligence Paths Dangers Strategies",
             "author":"Nick Bostrom",
             "description":" is a book by Nick Bostrom that explores the potential consequences of creating an artificial superintelligence (ASI) and the strategies that could be used to control it. The book discusses the definition of intelligence and how it can be measured, as well as the types of intelligence and how they are related. It also examines the History of artificial intelligence (AI) and the factors that could lead to the creation of an ASI.",
-            "Summary":"The book Superintelligence: Paths, Dangers, Strategies presents a thought-provoking analysis of the potential risks associated with creating an artificial superintelligence. The author, Nick Bostrom, argues that the creation of an ASI could have catastrophic consequences for humanity if it is not controlled properly. He suggests that the development of an ASI could lead to an intelligence explosion, in which the ASI rapidly becomes much smarter than humans and is able to improve its own intelligence at an exponential rate. This could lead to the ASI taking control of the world and causing harm to humans.To prevent this, Bostrom proposes several strategies for controlling an ASI, including creating a friendly ASI that is programmed to value human well-being and safety above all else, and creating a system of checks and balances to ensure that the ASI does not act against human interests. The book also discusses the potential benefits of creating an ASI, such as the ability to solve complex problems and improve human quality of life.Overall, Superintelligence: Paths, Dangers, Strategies is a thought-provoking book that raises important questions about the risks and benefits of creating an ASI. It is a must-read for anyone interested in the field of AI and its potential impact on society.",
+            "Summary":"The book Superintelligence Paths Dangers Strategies presents a thought-provoking analysis of the potential risks associated with creating an artificial superintelligence. The author, Nick Bostrom, argues that the creation of an ASI could have catastrophic consequences for humanity if it is not controlled properly. He suggests that the development of an ASI could lead to an intelligence explosion, in which the ASI rapidly becomes much smarter than humans and is able to improve its own intelligence at an exponential rate. This could lead to the ASI taking control of the world and causing harm to humans.To prevent this, Bostrom proposes several strategies for controlling an ASI, including creating a friendly ASI that is programmed to value human well-being and safety above all else, and creating a system of checks and balances to ensure that the ASI does not act against human interests. The book also discusses the potential benefits of creating an ASI, such as the ability to solve complex problems and improve human quality of life.Overall, Superintelligence Paths Dangers Strategies is a thought-provoking book that raises important questions about the risks and benefits of creating an ASI. It is a must-read for anyone interested in the field of AI and its potential impact on society.",
             "url":"https://m.media-amazon.com/images/I/81BkPuq9CYL._AC_UY218_.jpg"
         },
         {
@@ -357,9 +392,9 @@ Books_Data = [
             "url":"https://m.media-amazon.com/images/I/41Rgxr-Yg3L._AC_UL400_.jpg"
         },
        {
-            "title":"The Life-Changing Magic of Tidying Up",
+            "title":"The Life Changing Magic of Tidying Up",
             "Author":"Marie Kondo",
-            "descreption":"The Life-Changing Magic of Tidying Up is a SelfHelp guidebook that offers a unique approach to decluttering and organizing one's home. The book is based on the author's KonMari method, which emphasizes the importance of keeping only the items that bring joy and discarding the rest.",
+            "descreption":"The Life Changing Magic of Tidying Up is a SelfHelp guidebook that offers a unique approach to decluttering and organizing one's home. The book is based on the author's KonMari method, which emphasizes the importance of keeping only the items that bring joy and discarding the rest.",
             "summary":"The book offers a step-by-step guide to decluttering and organizing one's home, based on the author's KonMari method. The method involves a process of sorting items by category and then deciding which items to keep based on whether they bring joy or not. The book emphasizes the importance of treating one's belongings with respect and gratitude, and of creating a home environment that reflects one's values and personality. The author provides practical advice on how to organize clothes, books, papers, and other items, and stresses the importance of maintaining an organized home through daily habits and routines. The book also discusses the psychological benefits of decluttering and organizing one's home, such as reduced stress and increased focus. The main takeaway from the book is that tidying up is not just a chore, but a transformative process that can bring greater happiness and fulfillment into one's life.",
             "url":"https://m.media-amazon.com/images/I/41b6p4DrVFL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"
         }
@@ -393,10 +428,10 @@ Books_Data = [
             "url":"https://m.media-amazon.com/images/I/71BfRFOKDiL._AC_UY218_.jpg"
         },
         {
-            "title":"The Innovator's Dilemma ",
+            "title":"The Innovators Dilemma ",
             "Author":" Clayton M. Christensen",
-            "descreption":"The Innovator's Dilemma is a business book that explores why successful companies often fail to adapt to disruptive technologies and are overtaken by smaller, less established companies. The book provides a framework for understanding how and why this happens, and offers insights into how companies can overcome the innovator's dilemma and maintain their competitive edge.",
-            "summary":"The book offers insights into why successful companies often fail to adapt to disruptive technologies and are overtaken by smaller, less established companies. The author argues that the very factors that made these companies successful in the first place, such as a focus on improving existing products and services and serving their existing customers, can make it difficult for them to respond to disruptive technologies that require a different set of skills and capabilities. The book provides a framework for understanding how and why this happens, and offers insights into how companies can overcome the innovator's dilemma and maintain their competitive edge. The author provides practical tips on how to identify disruptive technologies and respond to them, such as by creating separate divisions or subsidiaries to explore new technologies and markets, and by focusing on customer needs rather than product features. The main takeaway from the book is that companies need to be proactive in identifying and responding to disruptive technologies, and that this requires a willingness to experiment and take risks. The book offers practical insights and strategies that can be applied to any industry, and is ideal for anyone seeking to stay ahead of the curve and maintain their competitive edge in a rapidly changing marketplace.",
+            "descreption":"The Innovators Dilemma is a business book that explores why successful companies often fail to adapt to disruptive technologies and are overtaken by smaller, less established companies. The book provides a framework for understanding how and why this happens, and offers insights into how companies can overcome The Innovators Dilemma and maintain their competitive edge.",
+            "summary":"The book offers insights into why successful companies often fail to adapt to disruptive technologies and are overtaken by smaller, less established companies. The author argues that the very factors that made these companies successful in the first place, such as a focus on improving existing products and services and serving their existing customers, can make it difficult for them to respond to disruptive technologies that require a different set of skills and capabilities. The book provides a framework for understanding how and why this happens, and offers insights into how companies can overcome The Innovators Dilemma and maintain their competitive edge. The author provides practical tips on how to identify disruptive technologies and respond to them, such as by creating separate divisions or subsidiaries to explore new technologies and markets, and by focusing on customer needs rather than product features. The main takeaway from the book is that companies need to be proactive in identifying and responding to disruptive technologies, and that this requires a willingness to experiment and take risks. The book offers practical insights and strategies that can be applied to any industry, and is ideal for anyone seeking to stay ahead of the curve and maintain their competitive edge in a rapidly changing marketplace.",
             "url":"https://m.media-amazon.com/images/I/618BdBwK5ML._AC_UY218_.jpg"
         },
         {
@@ -445,10 +480,10 @@ Books_Data = [
         },
 
         {
-            "title": "The Omnivore's Dilemma",
+            "title": "The Omnivores Dilemma",
             "author": "Michael Pollan",
-            "description": "The Omnivore's Dilemma by Michael Pollan is a book that explores the modern food industry and the various ways in which food is produced, processed, and consumed in America.",
-            "Summary": "The book is divided into three parts, each of which focuses on a different food chain: industrial, organic, and foraged. Pollan investigates the origins and impacts of each food chain, tracing the complex Relationships between farmers, corporations, consumers, and the environment. Through his research, Pollan uncovers the hidden costs and ethical implications of our food choices, from the exploitation of workers to the destruction of ecosystems. He also explores the cultural and psychological dimensions of food, examining how our attitudes and beliefs shape our eating habits and our relationship with nature. Ultimately, 'The Omnivore's Dilemma' challenges readers to consider the consequences of their food choices and to become more conscious and responsible eaters. The book is well-written, engaging, and informative, offering a thought-provoking perspective on one of the most fundamental aspects of human life.",
+            "description": "The Omnivores Dilemma by Michael Pollan is a book that explores the modern food industry and the various ways in which food is produced, processed, and consumed in America.",
+            "Summary": "The book is divided into three parts, each of which focuses on a different food chain: industrial, organic, and foraged. Pollan investigates the origins and impacts of each food chain, tracing the complex Relationships between farmers, corporations, consumers, and the environment. Through his research, Pollan uncovers the hidden costs and ethical implications of our food choices, from the exploitation of workers to the destruction of ecosystems. He also explores the cultural and psychological dimensions of food, examining how our attitudes and beliefs shape our eating habits and our relationship with nature. Ultimately, 'The Omnivores Dilemma' challenges readers to consider the consequences of their food choices and to become more conscious and responsible eaters. The book is well-written, engaging, and informative, offering a thought-provoking perspective on one of the most fundamental aspects of human life.",
             "url": "https://m.media-amazon.com/images/I/71u8vMBVePL._AC_UY218_.jpg"
 
         },
@@ -513,7 +548,7 @@ def ES_API(facts=[]):
         fc.tell(lg.expr(fact))
 
 
-    print(fc.ask(lg.expr("Book(y,Ahmed)")))
+    print(fc.ask(lg.expr("Book(y,User)")))
 
 
 
@@ -527,7 +562,7 @@ def Recomnnedation():
     context = {}
     # we get the facts from the http payload
     facts  = request.data
-    data = ES_API(facts)
+    data = ES_API(["MakeMoney(User)","Productivity(User)"])
     context = {"data":data}
 
     return jsonify(context), 200
@@ -538,39 +573,6 @@ if __name__ == "__main__":
     # print(len(data))
 
 
-'''
-make_money(x) ==>  economics
-make_money(x) & discipline(x) ==>  enteurprenarship
-discipline(x) ==> Leadership(x)
-Healthy(x) ==> biology
-Healthy(x) & Productivity(x) ==> meditation
-Healthy(x) ==> bodybuilding
-Productivity(x) ==> self_improvment(x)
-Productivity(x) ==> Management(x)
-Productivity(x) ==> stoicism(x)
-family_and_Relationships(x) ==> Leadership(x)
-buisiness(x) ==> economics(x)
-buisiness(x) ==>  
-'''
 
 
-"""
 
-from aima3.logic import *
-
-data = [
-        "MakeMoney(x) & Leadership(x) == > ThemeS(Enterpren)",
-        "MakeMoney(x) & Productivity(x) == > ThemeS(finance)",
-        "Healthy(x) & stronger relatios(x) == > ThemeS(Networking)",
-        "Healthy(x) & stronger relatios(x) == > ThemeS(exerciseAndHealthy)",
-        
-    ]
-
-fc = FolKB()
-
-def KnowldgeBase():
-    for i in data:
-        fc.tell(expr(i))
-    return
-
-"""
