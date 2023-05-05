@@ -21,7 +21,7 @@ export default function Form() {
                 
                     <div className='bg-[#E46267] max-w-[40%] text-center py-4 border-white border-4 shadow-xl px-3'
                     style={{border:"4px solid #F8F8F8" , boxShadow:"4px 5px 20px rgba(0, 0, 0, 0.25), -4px -4px 4px rgba(0, 0, 0, 0.25)",borderRadius:"5px"}}>
-                        <Link to={"/GetStarted"}>
+                        <Link to={"/Main"}>
                             <img src={intelligence} alt="image1" className="w-48 h-48 m-auto" />
                             <h1 className='text-2xl text-white'>Expert System App</h1>
                             <p className='text-sm text-justify text-slate-200'>explaining a little bit explaining a little bit explaining 

@@ -35,12 +35,26 @@ export default function Form() {
             <div className="Goals">
                 <div className="container">
                 <div className="list">
+
+                   <div className="form-element">
+                        <input type="checkbox" name="platForm" value="" id="i" />
+                        <label htmlFor="i">
+                        
+                            <div className="title">
+                                Win at work
+                            </div>
+                            <div className="icon">
+                                <img src={image} alt="" />
+                            </div>
+                        </label>
+                    </div>    
+
                     <div className="form-element">
                     <input type="checkbox" name="platForm" value="instagram" id="instagram" />
                     <label htmlFor="instagram">
                         
                         <div className="title">
-                         Make More Money
+                         Have More Money
                         </div>
                         <div className="icon">
                             <img src={image1} alt="" />
@@ -49,16 +63,16 @@ export default function Form() {
                     </div>
 
                     <div className="form-element">
-                    <input type="checkbox" name="platForm" value="" id="i" />
-                    <label htmlFor="i">
-                       
-                        <div className="title">
-                            Be more productive
-                        </div>
-                        <div className="icon">
-                            <img src={image} alt="" />
-                        </div>
-                    </label>
+                        <input type="checkbox" name="platForm" value="" id="i22" />
+                        <label htmlFor="i22">
+                        
+                            <div className="title">
+                                Be Productive
+                            </div>
+                            <div className="icon">
+                                <img src={image} alt="" />
+                            </div>
+                        </label>
                     </div>                    
 
                     <div className="form-element">
@@ -66,7 +80,7 @@ export default function Form() {
                     <label htmlFor="slack">
                        
                         <div className="title">
-                        Be more productive
+                        Build strong family
                         </div>
                         <div className="icon">
                             <img src={image} alt="" />
@@ -78,7 +92,7 @@ export default function Form() {
                     <label htmlFor="pinterest">
                        
                         <div className="title">
-                        Be more productive
+                        have a healthy body
                         </div>
                         <div className="icon">
                             <img src={image} alt="" />
@@ -97,14 +111,52 @@ export default function Form() {
                         </div>
                     </label>
                     </div>
+                    <div className="form-element">
+                        <input type="checkbox" name="platForm" value="" id="i3" />
+                        <label htmlFor="i3">
+                        
+                            <div className="title">
+                                Be Happy
+                            </div>
+                            <div className="icon">
+                                <img src={image} alt="" />
+                            </div>
+                        </label>
+                    </div>    
 
+                    <div className="form-element">
+                        <input type="checkbox" name="platForm" value="" id="i1" />
+                        <label htmlFor="i1">
+                        
+                            <div className="title">
+                                Improve social life
+                            </div>
+                            <div className="icon">
+                                <img src={image} alt="" />
+                            </div>
+                        </label>
+                    </div>    
+
+
+                    <div className="form-element">
+                        <input type="checkbox" name="platForm" value="" id="i2" />
+                        <label htmlFor="i2">
+                        
+                            <div className="title">
+                                Learn programming
+                            </div>
+                            <div className="icon">
+                                <img src={image} alt="" />
+                            </div>
+                        </label>
+                    </div>    
 
                 </div>
                </div>
             </div>
 
-            <button className='btn-next'>
-                <a href='/'>Finish</a>
+            <button className='btn-next mt-6'>
+                <a href='/Journey'>Continue</a>
             </button>
         </div>
     </div>

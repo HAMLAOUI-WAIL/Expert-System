@@ -76,11 +76,6 @@ export default function Form_after() {
                     </div>
                     </div>
                 </div>
-
-                <div>
-                    ,
-                </div>
-
                 </div>
     
                 
