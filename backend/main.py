@@ -98,49 +98,34 @@ temp = [
 ]
 
 rules = [
-    "Leadership(x)  ==> Theme(Management,x)",
+    "Leadership(x)  ==> Theme(LeadershipDevelopment,x)",
     "Career(x) ==> Theme(Management,x)",
-    "Career(x) ==> Theme(Entrepreneurship,x)",
-    "Leadership(x)  ==> Theme(Entrepreneurship,x)",
 
-    "Productivity(x)  ==> Theme(Organization,x)",
     "Career(x) ==> Theme(Organization,x)",
 
-    "Career(x) ==> Theme(TimeManagement,x)",
     "Productivity(x) ==> Theme(TimeManagement,x)",
 
     "MakeMoney(x)  ==>Theme(Business,x)",
-    "Career(x) ==>Theme(Business,x)",
 
 
-    "Career(x) ==>Theme(Finance,x)",
-    "Career(x) ==>Theme(Finance,x)",
-
-    "Productivity(x) ==> Theme(SelfImprovement,x)",
-    "Healthy(x) ==> Theme(SelfImprovement,x)",
-
-    "Productivity(x) ==>Theme(Nutrition,x)",
     "Healthy(x) ==>Theme(Nutrition,x)",
 
     "Healthy(x) ==>Theme(Wellness,x)",
-    "Productivity(x) ==>Theme(Wellness,x)",
 
     "Social(x) ==> Theme(CommunicationSkills,x)",
-    "Healthy(x) ==> Theme(CommunicationSkills,x)",
 
-    " Healthy(x) ==> Theme(SelfHelp,x)",
+    "Healthy(x) ==> Theme(SelfHelp,x)",
     "Social(x)  ==> Theme(SelfHelp,x)",
 
     "Healthy(x) ==> Theme(Relationships,x)",
     "Social(x) ==> Theme(Relationships,x)",
 
     "Technology(x)  ==> Theme(TechnologyTrends,x)",
-    "Career(x) ==> Theme(TechnologyTrends,x)",
 
     "Technology(x) ==> Theme(Freelance,x)",
     "MakeMoney(x) ==> Theme(Freelance,x)",
 
-    "Technology(x) ==> Theme(Investing,x)",
+    # "Technology(x) ==> Theme(Investing,x)",
     "MakeMoney(x) ==> Theme(Investing,x)",
 
     "Productiviy(x) ==> Theme(ArtificielIntelligence,x)",
@@ -151,34 +136,31 @@ rules = [
 
 
     "Articulate(x) ==> Theme(Investing,x)",
-    "MakeMoney(x) ==> Theme(Investing,x)",
+    "MakeMoney(x) ==> Theme(Finance,x)",
 
     "Articulate(x)  ==> Theme(SelfImprovement,x)",
     "Productivity(x) ==> Theme(SelfImprovement,x)",
 
-    "Articulate(x)  ==> Theme(Finance,x)",
-    "Career(x) ==> Theme(Finance,x)",
+    # "Articulate(x)  ==> Theme(Finance,x)",
 
     "Articulate(x) ==> Theme(TechonologyTrends,x)",
     "Techonology(x) ==> Theme(TechonologyTrends,x)",
 
-    "Articulate(x) ==> Theme(Cybersecurity,x)",
     "Techonology(x) ==> Theme(Cybersecurity,x)",
 
-    "Articulate(x) ==> Theme(Programming,x)",
     "Techonology(x) ==> Theme(Programming,x)",
 
-    "Social(x) ==> Theme(Relationships,x)",
-    "Career(x) ==> Theme(Business,x)",
-    "MakeMoney(x) ==> Theme(Finance,x)",
-    "Productivity(x) ==> Theme(TimeManagement,x)",
-    "Leadership(x) ==> Theme(LeadershipDevelopment,x)",
-    "Articulate(x) ==> Theme(History,x)",
-    "Healthy(x) ==> Theme(Nutrition,x)",
-    "Social(x) ==> Theme(CommunicationSkills,x)",
-    "Technology(x) ==> Theme(Programming,x)",
+    # "Social(x) ==> Theme(Relationships,x)",
+    # "Career(x) ==> Theme(Business,x)",
+    # "MakeMoney(x) ==> Theme(Finance,x)",
+    # "Productivity(x) ==> Theme(TimeManagement,x)",
+    # "Leadership(x) ==> Theme(LeadershipDevelopment,x)",
+    # "Articulate(x) ==> Theme(History,x)",
+    # "Healthy(x) ==> Theme(Nutrition,x)",
+    # "Social(x) ==> Theme(CommunicationSkills,x)",
+    # "Technology(x) ==> Theme(Programming,x)",
 
-    "Theme(Career,x)  ==> Book(The_Effective_Executive,x)",
+    "Theme(Management,x)  ==> Book(The_Effective_Executive,x)",
     "Theme(Entrepreneurship,x)  ==> Book(The_Effective_Executive,x)",
     "Theme(Management,x)  ==> Book(The_Effective_Executive,x)",
     "Theme(Organization,x) ==> Book(The_Effective_Executive,x)",
@@ -218,12 +200,13 @@ rules = [
 
     "Theme(Finance,x) ==> Book(The_Intelligent_Investor,x) ",
     "Theme(Investing,x)   ==> Book(The_Intelligent_Investor,x)",
+
     "Theme(Finance,x) ==> Book(The_Millionaire_Next_Door,x)",
     "Theme(LeadershipDevelopment,x)   ==> Book(The_Millionaire_Next_Door,x)",
-    "Theme(SelfHelp,x) ==> Book(The_7_Habits_of_Highly_Effective_People,x) ",
+
     "Theme(Wellness,x)  ==> Book(The_7_Habits_of_Highly_Effective_People,x)",
     "Theme(Psychology,x)  ==> Book(The_7_Habits_of_Highly_Effective_People,x)",
-    "Theme(SelfHelp,x) ==> Book(Atomic_Habits,x) ",
+
     "Theme(Psychology,x) ==> Book(Atomic_Habits,x)",
     "Theme(TimeManagement,x) ==> Book(Atomic_Habits,x)",
 
@@ -231,11 +214,10 @@ rules = [
     "Theme(Nutrition,x) ==> Book(How_Not_to_Die,x) ",
     "Theme(Wellness,x) ==> Book(How_Not_to_Die,x)",
     "Theme(SelfImprovement,x)  ==> Book(How_Not_to_Die,x)",
+
     "Theme(Nutrition,x) ==> Book(The_Omnivores_Dilemma,x)",
     "Theme(Wellness,x) ==> Book(The_Omnivores_Dilemma,x)",
-    "Theme(SelfHelp,x)  ==> Book(The_Omnivores_Dilemma,x)",
-    "Theme(SelfHelp,x) ==> Book(The_Power_of_Now,x)",
-    "Theme(SelfImprovement,x) ==> Book(The_Power_of_Now,x)",
+
     "Theme(TimeManagement,x)  ==> Book(The_Power_of_Now,x)",
 
     "Theme(SelfImprovement,x) ==> Book(The_Four_Agreements,x)",
@@ -780,13 +762,24 @@ def ES_API(facts=[]):
         fc.tell(lg.expr(fact))
 
 
-    tmp = lg.fol_fc_ask(fc,lg.expr("Book(y,User)"))
+    tmp = list(lg.fol_fc_ask(fc,lg.expr("Book(y,User)")))
     # print("lkdjaspodjaosjdposajd ", len(Books_Data))
-    print(len(list(tmp)))
+    print(tmp)
     # for value in tmp.values():
     #     if str(value) not in Themes :
     #         titlesList.append(str(value).replace('_',' '))
     #
+    for item in tmp :
+        # if str(item.) not in Themes:
+        #     titlesList.append(str(item['y']).replace('_',' '))
+        titlesList.append(str(item.values()).replace('_',' ')[13:-2])
+    # print(titlesList)
+
+    for book in Books_Data:
+        if book.get('title') in titlesList:
+            result.append(book)
+
+
     # print("I Was here" , titlesList)
     # for title in titlesList:
     #     print("This is the title : ", title)
@@ -803,10 +796,16 @@ def Recomnnedation():
     context = {}
     # we get the facts from the http payload
     facts  = request.data
-    data = ES_API(["MakeMoney(User)","Productivity(User)","Career(User)","Healthy(User)"])
+    data = ES_API(["MakeMoney(User)"])
     print("This is Data : ", data)
     context = {"data":data}
     print(len(data))
+    print("---------------------------------------------------------")
+    # data = ES_API(["Articulate(User)","Technology(User)","Social(User)"])
+    # print("This is Data : ", data)
+    # context = {"data":data}
+    # print(len(data))
+
 
 
     return jsonify(context), 200
