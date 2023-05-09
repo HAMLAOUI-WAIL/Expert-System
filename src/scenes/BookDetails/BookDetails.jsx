@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import { Link } from 'react-router-dom';
 import PersonalInfo from '../../componant/PersonalInfo'
 import Search from '../../componant/Search'
@@ -10,6 +10,33 @@ import "./BookDetails.css"
 
 export default function BookDetails(props) {
     // const content = props.location.state.content;
+    let title = "The Effective Executive".replace(" ","-")
+    const [book , setBook ] = useState({
+      title:"",
+      author:"",
+      description:"",
+      summary:"",
+      url:""
+      })
+
+    useEffect(()=>{
+      let url = `http://localhost:8080/${title}`
+      let opts = {
+        method : "GET",
+        headers :{
+          "Content-Type":"application/json",
+        },
+
+      }
+
+      
+      fetch(url,opts).then(res=>res.json()).then(res=>{
+        console.log(res)
+        setBook(res.data)
+      })
+
+
+    },[])
 
   return (
     <div className='DetailsContent'>
@@ -22,16 +49,14 @@ export default function BookDetails(props) {
 
       <div className="pageElement">
         <div className="imageCO">
+        <img src={book.url} />
         
         </div>
         <div className="EContent">
-            <h1>Can’t hurt me son</h1>
-            <h2>David Goggins</h2>
+            <h1>{book.title}</h1>
+            <h2>{book.author}</h2>
             <p>
-             Get ready to dominate your inner 
-             voices and learn how to stay hard son .
-             Get ready to dominate your inner voices
-             and learn how to stay hard son .  
+              {book.description.slice(0,150)}...
             </p>
         </div>
       </div>
@@ -52,21 +77,14 @@ export default function BookDetails(props) {
               <div className="Description">
                   <h1>Description</h1>
                   <p>
-                  Start your Journey 
-                  Start your Journey 
-                  Start your Journey 
-                  Start your Journey 
-                  Start your Journey 
-                  Start your Journey 
-                  Start your Journey 
-                  Start your Journey 
-                  Start your Journey 
+              {book.description}
+
                   </p>
               </div>
               <div className='MoreDetails'>
                   <div className="Editors">
                       <h1>Editors</h1>
-                      <p>David Goggins , Andrew Tate , Tristian Tate</p>
+                      <p>{book.author},{book.author}</p>
                   </div>
                   <div className="Language">
                       <h1>Languages</h1>

@@ -3,9 +3,12 @@ import React, { useEffect } from 'react'
 import "./tictactoe.css"
 
 export default function TickTacTao() {
+    
     let origBoard;
+
     const huPlayer = 'O';
     const aiPlayer = 'X';
+
     const winCombos = [
         [0, 1, 2],
         [3, 4, 5],

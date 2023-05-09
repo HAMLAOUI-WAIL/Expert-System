@@ -14,7 +14,10 @@
 
     
 }
-
+.imageCO img {
+    width:100%;
+    height:100%;
+}
 .DetailsContent .pageElement .imageCO{
     width: 251px;
     height: 398px;  

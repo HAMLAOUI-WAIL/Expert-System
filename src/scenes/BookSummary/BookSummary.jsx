@@ -1,9 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PersonalInfo from '../../componant/PersonalInfo'
 import Search from '../../componant/Search'
 import "./BookSummary.css"
+import { useEffect, } from 'react'
 
 export default function BookSummary() {
+
+  let title = "The Effective Executive".replace(" ","-")
+  const [book,setBook] = useState({
+    title:"",
+    author:"",
+    description:"",
+    summary:"",
+    url:""
+  })
+  useEffect(()=>{
+      
+      let url = `http://localhost:8080/${title}`
+      let opts = {
+        method : "GET",
+        headers :{
+          "Content-Type":"application/json",
+        },
+
+      }
+
+      
+      fetch(url,opts).then(res=>res.json()).then(res=>{
+        setBook(res.data)
+        console.log(res.data) 
+      })
+
+
+
+
+    },[])
   return (
     <div className='BookSummary'>
       <div className='Nav-Conta'>
@@ -15,16 +46,13 @@ export default function BookSummary() {
 
       <div className="pageElement">
         <div className="imageCO">
-        
+        <img src={book.url} />
         </div>
         <div className="EContent">
-            <h1>Can’t hurt me son</h1>
-            <h2>David Goggins</h2>
+            <h1>{book.title}</h1>
+            <h2>{book.Author}</h2>
             <p>
-             Get ready to dominate your inner 
-             voices and learn how to stay hard son .
-             Get ready to dominate your inner voices
-             and learn how to stay hard son .  
+             {book.description} 
             </p>
         </div>
       </div>
@@ -50,34 +78,20 @@ export default function BookSummary() {
                     <span >1.</span><h2>Keep Yourself Inline jonga shis</h2> 
                     <div>
                         <p className='textS'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Nulla risus tellus, finibus sed eleifend eget, 
-                         dictum et erat. Quisque vel accumsan turpis. 
-                         Integer quis eros turpis. Etiam vestibulum 
-                         lorem eget velit faucibus, dapibus efficitur
-                          nibh maximus. Sed finibus, dolor in sollicitudin laoreet, 
-                          nunc diam faucibus metus, at egestas risus nunc ac sapien. Donec sodales vehicula malesuada. Vivamus eget dignissim ante. Nunc eget diam ultricies, lobortis massa et, sodales ipsum. Integer dictum nisl nec dui posuere, ut condimentum elit viverra. Nam blandit, risus vel tristique interdum, dolor augue dapibus magna, hendrerit commodo risus nulla ultricies nibh.
-                        Fusce eleifend, velit at dignissim faucibus, nunc ex rhoncus diam, 
-                        viverra consectetur nisl ligula sit amet felis.
-                         Nunc fringilla nisl lectus, nec vestibulum sapien molestie.
+                          {
+                            book.summary
+                          }
                         </p>
                     </div>
                 </div>
 
                 <div>
-                    <span >2.</span><h2>Keep Yourself Inline jonga shis</h2> 
+                    <span >2.</span><h2>Practice till you piss blood</h2> 
                     <div>
                         <p className='textS'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Nulla risus tellus, finibus sed eleifend eget, 
-                         dictum et erat. Quisque vel accumsan turpis. 
-                         Integer quis eros turpis. Etiam vestibulum 
-                         lorem eget velit faucibus, dapibus efficitur
-                          nibh maximus. Sed finibus, dolor in sollicitudin laoreet, 
-                          nunc diam faucibus metus, at egestas risus nunc ac sapien. Donec sodales vehicula malesuada. Vivamus eget dignissim ante. Nunc eget diam ultricies, lobortis massa et, sodales ipsum. Integer dictum nisl nec dui posuere, ut condimentum elit viverra. Nam blandit, risus vel tristique interdum, dolor augue dapibus magna, hendrerit commodo risus nulla ultricies nibh.
-                        Fusce eleifend, velit at dignissim faucibus, nunc ex rhoncus diam, 
-                        viverra consectetur nisl ligula sit amet felis.
-                         Nunc fringilla nisl lectus, nec vestibulum sapien molestie.
+                        {
+                            book.summary
+                          }
                         </p>
                     </div>
                 </div>
