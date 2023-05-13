@@ -7,10 +7,12 @@ import downloading from "../images/icons8-downloading-updates-100 1.png"
 import connect from "../images/icons8-connect-128 1.png"
 import save from '../images/icons8-bookmark-100 2.png'
 import "./BookDetails.css"
-
+import { useParams } from 'react-router-dom';
 export default function BookDetails(props) {
     // const content = props.location.state.content;
-    let title = "The Effective Executive".replace(" ","-")
+    const {slug} = useParams()
+    console.log(slug);
+    // let title = "The Effective Executive".replace(" ","-")
     const [book , setBook ] = useState({
       title:"",
       author:"",
@@ -20,7 +22,7 @@ export default function BookDetails(props) {
       })
 
     useEffect(()=>{
-      let url = `http://localhost:8080/${title}`
+      let url = `http://localhost:8080/${slug}`
       let opts = {
         method : "GET",
         headers :{
@@ -33,6 +35,9 @@ export default function BookDetails(props) {
       fetch(url,opts).then(res=>res.json()).then(res=>{
         console.log(res)
         setBook(res.data)
+      }).then(()=>{
+        console.log("asdasd asd sad as d")
+        console.log(book);
       })
 
 
@@ -43,7 +48,7 @@ export default function BookDetails(props) {
       <div className='Nav-Conta'>
         <Search/>
         <div className="Inf">
-         <PersonalInfo/>
+          <PersonalInfo/>
         </div>
       </div>
 
@@ -62,8 +67,8 @@ export default function BookDetails(props) {
       </div>
       <div className="Details">
         <div className="btn-">
-            <Link to={"/BookSummary"}>
-             <Button props={"Read The Summary"}/>
+            <Link to={`/BookSummary/${slug}`}>
+             <Button text={"Read The Summary"}/>
             </Link>
             <div className='lgg'>
                 <img src={save} alt="" />

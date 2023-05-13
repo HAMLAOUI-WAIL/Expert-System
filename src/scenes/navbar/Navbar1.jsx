@@ -1,10 +1,16 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
+
+
 import homeIcon from "../images/icons8-smart-home-96 (1) 1.png"
 import searchIcon from "../images/icons8-search-100 2.png"
-import saveIcon from "../images/icons8-bookmark-100 1.png"
-import imageIcon from "../images/icons8-adventure-100 1.png"
-import "./navbar.css"
+import randomIcon from "../images/open-book.png"
+import journeyIcon from "../images/icons8-adventure-100 1.png"
+
+
+
+
+import style from  "./navbar.module.css"
 
 export default function Navbar1() {
 
@@ -14,20 +20,29 @@ export default function Navbar1() {
   };
 
   return (
-    <div className="navbar">
-      <p>AW</p>
-      <Link to="/" onClick={() => handleIconClick('home')}>
-        <img src={homeIcon} alt="Home" className={activeIcon === 'home' ? 'active' : ''} />
+    <div className={style.navbar}>
+      <Link to="/">
+        <p>_MR</p>
       </Link>
-      <Link to="/Search" onClick={() => handleIconClick('search')}>
-        <img src={searchIcon} alt="Search" className={activeIcon === 'search' ? 'active' : ''} />
+      <div>
+        <Link to="/home" onClick={() => handleIconClick('home')}>
+          <img src={homeIcon} alt="Home" className={activeIcon === 'home' ? style.active : ''} />
+        </Link>
+        <Link to="/Search" onClick={() => handleIconClick('search')}>
+          <img src={searchIcon} alt="Search" className={activeIcon === 'search' ? style.active : ''} />
+        </Link>
+        <Link to="/Journey" onClick={() => handleIconClick('journey')}>
+          <img src={journeyIcon} alt="journey" className={activeIcon === 'journey' ? style.active : ''} />
+        </Link>
+        <Link to="/" onClick={() => handleIconClick('random')}>
+          <img src={randomIcon} alt="random" className={activeIcon === 'random' ? style.active : ''} />
+        </Link>
+      </div>
+
+      <Link to>
+          
       </Link>
-      <Link to="/Journey" onClick={() => handleIconClick('image')}>
-        <img src={imageIcon} alt="" className={activeIcon === 'image' ? 'active' : ''} />
-      </Link>
-      <Link to="/" onClick={() => handleIconClick('save')}>
-        <img src={saveIcon} alt="Save" className={activeIcon === 'save' ? 'active' : ''} />
-      </Link>
+
     </div>
   )
 }

@@ -1,38 +1,32 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState,useEffect } from 'react'
 import "./journey.css"
 import Search from '../../componant/Search'
 import PersonalInfo from './../../componant/PersonalInfo';
 import Button from '../../componant/Button';
+import { useBooksContext } from '../../BooksContext';
+import { Link, useNavigate } from 'react-router-dom';
 
-const BookList = [
-  {
-  image:'',
-  title:'Fire and Shitty crap in asd teq'
-},  {
-  image:'',
-  title:'Fire and Shitty crap in asd teq'
-},  {
-  image:'',
-  title:'Fire and Shitty crap in asd teq'
-},  {
-  image:'',
-  title:'Fire and Shitty crap in asd teq'
-},{
-  image:'',
-  title:'Fire and Shitty crap in asd teq'
-},  {
-  image:'',
-  title:'Fire and Shitty crap in asd teq'
-}
-]
 
 export default function Journey_() {
-
+  const {booksData,setBooksData} = useBooksContext()
   const navigate = useNavigate()
 
+  useEffect(()=>{
+    let temp = localStorage.getItem("booksData")
+    if(temp == null || temp == ""){
+      navigate('/Form')
+    }
+
+    else{
+      setBooksData(JSON.parse(temp))
+    }
+    console.log(booksData)
+  },[])
+
+ 
+
   const handleClick = () => {
-    navigate( '/details',{state:{content:BookList}});
+
   };  
   const handleChange = () => {
     
@@ -54,17 +48,21 @@ export default function Journey_() {
             trained really hard , however Zeke managed to catch his head and activate it. </p>
       </div>
      
-      <Button props={"continue reading"}/>
+      <Button text={"continue reading"}/>
       <h1 className='mt-6' >Does this book seem interesting to you?</h1>
 
       <div className="contantSearch">
         {
-          BookList.map((item,index)=>(
+          booksData.map((item,index)=>(
+            <Link to={`/details/${item.title.replace("/ /g","-")}`}>
             <div className="BookSResultat" key={index} >
-              <div className="imageC" onClick={handleClick}></div>
+              <div className="imageC" onClick={handleClick}>
+                <img src={item.url}/>
+              </div>
               <div className="title">{item.title}</div>
             </div>
-          )) 
+            </Link>
+          ))  
         }
       </div>
 

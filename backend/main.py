@@ -5,7 +5,8 @@ from flask_cors import CORS,cross_origin
 # import aima.utils as ut
 import aima3.logic as lg
 import aima3.utils as ut
-
+import random
+import json
 
 
 app = Flask(__name__)
@@ -17,7 +18,7 @@ goals = [
     "Leadership",
     "Articulate"
     "Healthy",
-    "Social_life",
+    "Social",
     "Technology"
 ]
 
@@ -305,8 +306,6 @@ rules = [
     "Theme(LeadershipDevelopment,x)   ==> Book(The_21_Irrefutable_Laws_of_Leadership,x)",
     "Theme(History,x)   ==> Book(Sapiens_A_Brief_History_of_Humankind,x)",
     "Theme(History,x)    ==> Book(The_Guns_of_August,x)",
-
-
 ]
 
 Themes = [
@@ -317,7 +316,23 @@ Themes = [
     'LeadershipDevelopment','History'
 ]
 
+def Raid():
+    ReglesRaid = [
+        "System(Windows,x) & Price(Gratuit,x) & Category(Development,x) ==> Software(VSCode,x)",
+        "System(Windows,x) & Price(Money,x) & Category(Development,x) ==> Software(VSCode,x)"
+    
+        "System(Windows,x)  ==> Software(VSCode,x)"
+    
+        "Category(Development,x) ==> Software(VSCode,x)"
 
+    ]
+    fc = lg.FolKB()
+    fc.tell(lg.expr("System(Windows,Ahmed)"))
+    fc.tell(lg.expr("Price(Gratuit,Ahmed)"))
+    fc.tell(lg.expr("Category(Development,Ahmed)"))
+
+
+    list(fc.ask("Software(y,Ahmed)"))
 
 Books = [
     "The Effective Executive" , "High Output Management" 
@@ -742,39 +757,15 @@ booksData = [
 
 
 def ES_API(facts=[]):
+    #MakeMoney(User)
     titlesList = []
     result = []
-
-
-    if not facts :
-        return result
-
-
-
+    if not facts : return result
     fc = lg.FolKB()
-
-
-
-    for rule in rules :
-        fc.tell(lg.expr(rule))
-
-    for fact in facts:
-        fc.tell(lg.expr(fact))
-
-
+    for rule in rules :fc.tell(lg.expr(rule))
+    for fact in facts: fc.tell(lg.expr(fact))
     tmp = list(lg.fol_fc_ask(fc,lg.expr("Book(y,User)")))
-    # print("lkdjaspodjaosjdposajd ", len(booksData))
-    print(tmp)
-    # for value in tmp.values():
-    #     if str(value) not in Themes :
-    #         titlesList.append(str(value).replace('_',' '))
-    #
-    for item in tmp :
-        # if str(item.) not in Themes:
-        #     titlesList.append(str(item['y']).replace('_',' '))
-        titlesList.append(str(item.values()).replace('_',' ')[13:-2])
-    # print(titlesList)
-
+    for item in tmp :titlesList.append(str(item.values()).replace('_',' ')[13:-2])
     for book in booksData:
         if book.get('title') in titlesList:
             result.append({
@@ -784,53 +775,29 @@ def ES_API(facts=[]):
                 "url": book.get("url")
 
             })
-
-
-    # print("I Was here" , titlesList)
-    # for title in titlesList:
-    #     print("This is the title : ", title)
-    #     for book in booksData:
-    #         if book['title'] == title:
-    #             print("I Was here")
-    #             result.append(book)
-
     return result
 
-
-@app.route("/")
+@app.route("/",methods=["POST"])
 @cross_origin()
 def Recomnnedation():
     context = {}
-    # we get the facts from the http payload
     facts  = request.json.get("goals")
-    print(type(facts))
-    data = ES_API(["MakeMoney(User)"])
-    print("This is Data : ", data)
-    context = {"data":data}
-    print(len(data))
-    print("---------------------------------------------------------")
-    # data = ES_API(["Articulate(User)","Technology(User)","Social(User)"])
-    # print("This is Data : ", data)
-    # context = {"data":data}
-    # print(len(data))
-
-
-
+    data = ES_API(facts)
+    context = {"data":json.dumps(data)}
+    print(context)
     return jsonify(context), 200
+
+
 
 @app.route("/<string:title>")
 @cross_origin()
 def summary(title):
     context = {}
-    print("sadsadsa dspakd saojdsad")
     title = title.replace("-"," ")
-    print(title)
-    print("After Titel")
     for book in booksData:
-        print(book.get("title"))
         if book.get("title") == title:
             context = {
-                "data":book
+                "data":json.dumps(book)
             }
             return jsonify(context),200
 
@@ -838,9 +805,34 @@ def summary(title):
 
 
 
+@app.route("/popular")
+@cross_origin()
+def popular():
+    return jsonify({"data":booksData[:7]}),200
+
+
+
+@app.route("/random")
+@cross_origin()
+def random():
+    index = random.randint(0,len(booksData))
+    return jsonify({"data":booksData[index]}),200
+
+
+@app.route("/search/<string:keyword>")
+@cross_origin()
+def search(keyword):
+    result = []
+    for book in booksData:
+        if ( keyword in book.get("title") )or (keyword in book.get("description")):
+            result.append(book)
+    return jsonify({"data":result}),200
+
+
+
 if __name__ == "__main__":
+    print("Hello World!")
     app.run(port=8080)
-    # print(len(data))
 
 
 

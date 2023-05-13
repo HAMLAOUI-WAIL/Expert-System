@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import PersonalInfo from '../../componant/PersonalInfo'
 import Search from '../../componant/Search'
 import "./BookSummary.css"
-import { useEffect, } from 'react'
+import { useParams } from 'react-router-dom'
 
 export default function BookSummary() {
-
-  let title = "The Effective Executive".replace(" ","-")
+  const {slug} = useParams()
+  // let title = "The Effective Executive".replace(" ","-")
   const [book,setBook] = useState({
     title:"",
     author:"",
@@ -16,7 +16,7 @@ export default function BookSummary() {
   })
   useEffect(()=>{
       
-      let url = `http://localhost:8080/${title}`
+      let url = `http://localhost:8080/${slug}`
       let opts = {
         method : "GET",
         headers :{
@@ -50,7 +50,7 @@ export default function BookSummary() {
         </div>
         <div className="EContent">
             <h1>{book.title}</h1>
-            <h2>{book.Author}</h2>
+            <h2>by  {book.author}</h2>
             <p>
              {book.description} 
             </p>
